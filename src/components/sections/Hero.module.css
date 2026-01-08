@@ -1,0 +1,103 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: var(--header-height);
+    overflow: hidden;
+}
+
+.gridBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(var(--border-secondary) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border-secondary) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.4;
+    z-index: -1;
+    mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 800px;
+}
+
+.greeting {
+    font-family: var(--font-mono);
+    color: var(--accent-primary);
+    margin-bottom: var(--space-4);
+    font-size: 1rem;
+}
+
+.name {
+    font-size: 4rem;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    margin-bottom: var(--space-4);
+    background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent-primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-8);
+    font-weight: 400;
+}
+
+.actions {
+    display: flex;
+    gap: var(--space-4);
+}
+
+.buttonPrimary {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-3) var(--space-6);
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    transition: transform 0.2s ease;
+}
+
+.buttonPrimary:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.buttonSecondary {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-3) var(--space-6);
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-primary);
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    transition: background 0.2s ease;
+}
+
+.buttonSecondary:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .name {
+        font-size: 2.5rem;
+    }
+
+    .tagline {
+        font-size: 1.1rem;
+    }
+}
