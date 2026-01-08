@@ -34,31 +34,7 @@ const PROJECTS: Project[] = [
         icon: <BookOpen size={32} />,
         links: { demo: 'https://lab-ap.vercel.app/' },
         image: '/images/lab-ap.png'
-    },
-    {
-        title: 'AI-Driven Energy Management',
-        problem: 'Inefficient load distribution in microgrids causes instability and energy waste.',
-        solution: 'Designed a reinforcement learning agent to optimize battery storage and consumption in real-time, reducing peak load by 15%.',
-        stack: ['Python', 'TensorFlow', 'Raspberry Pi', 'Modbus'],
-        icon: <Zap size={32} />,
-        links: { github: '#', demo: '#' },
-    },
-    {
-        title: 'Autonomous Drone Navigation',
-        problem: 'GPS-denied environments pose challenges for standard drone positioning systems.',
-        solution: 'Implemented visual odometry using stereo cameras and an onboard NVIDIA Jetson Nano for SLAM processing.',
-        stack: ['C++', 'ROS 2', 'OpenCV', 'Embedded Systems'],
-        icon: <Cpu size={32} />,
-        links: { github: '#' },
-    },
-    {
-        title: 'Industrial IoT Monitor',
-        problem: 'Legacy factory equipment lacks digital interfaces for predictive maintenance.',
-        solution: 'Built a non-intrusive vibration analysis node using ESP32 sending MQTT data to a time-series database.',
-        stack: ['C', 'ESP32', 'MQTT', 'InfluxDB', 'Grafana'],
-        icon: <Activity size={32} />,
-        links: { github: '#', demo: '#' },
-    },
+    }
 ];
 
 export default function Projects() {
