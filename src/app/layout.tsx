@@ -15,8 +15,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Electrical Engineering Portfolio",
-  description: "Portfolio of an Electrical Engineer specializing in AI, IoT, and Embedded Systems.",
+  title: "Naufal Raihan S",
+  description: "gak ngerti SEO, ajarin dong puh sepuh , plis ajarin, gatau soalnya",
 };
 
 export default function RootLayout({
