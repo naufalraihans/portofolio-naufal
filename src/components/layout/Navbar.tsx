@@ -24,7 +24,7 @@ export default function Navbar() {
                     <div style={{ display: 'flex', alignItems: 'baseline' }}>
                         <span className={styles.logoName}>Naufal Raihan</span>
                         <span className={styles.cursor}>_</span>
-                        <span className={styles.logoPortfolio}>PORTFOLIO</span>
+                        <span className={styles.logoPortfolio}></span>
                     </div>
                 </Link>
 
