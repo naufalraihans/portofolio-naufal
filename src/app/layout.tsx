@@ -17,6 +17,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Naufal Raihan S | Electrical Engineering",
   description: "gak ngerti SEO, ajarin dong puh sepuh , plis ajarin, gatau soalnya owkowkow",
+  icons: {
+    icon: "/images/logoWeb.png",
+  },
 };
 
 export default function RootLayout({
