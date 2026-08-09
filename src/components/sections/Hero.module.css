@@ -9,24 +9,14 @@
 
 .gridBackground {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background-image:
         linear-gradient(var(--border-secondary) 1px, transparent 1px),
         linear-gradient(90deg, var(--border-secondary) 1px, transparent 1px);
-    background-size: 40px 40px;
-    opacity: 0.25;
+    background-size: 44px 44px;
+    opacity: 0.22;
     z-index: -1;
-    mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
-    animation: gridDrift 60s linear infinite;
-}
-
-@keyframes gridDrift {
-    to {
-        background-position: 40px 40px;
-    }
+    mask-image: radial-gradient(ellipse 70% 70% at 60% 40%, black 30%, transparent 100%);
 }
 
 .heroContent {
@@ -45,71 +35,35 @@
     max-width: 600px;
 }
 
-.imageContainer {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.geoRing {
-    position: absolute;
-    width: 460px;
-    height: 460px;
-    max-width: 90vw;
-    overflow: visible;
-    pointer-events: none;
-}
-
-.imageWrapper {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    /* Circle */
-    overflow: hidden;
-    border: 2px solid var(--accent-primary);
-    box-shadow: 0 0 40px -10px rgba(88, 196, 221, 0.4);
-    background: var(--bg-card);
-}
-
 .greeting {
     font-family: var(--font-mono);
-    color: var(--accent-primary);
+    color: var(--accent-secondary);
     margin-bottom: var(--space-4);
     font-size: 1rem;
+    letter-spacing: 0.04em;
 }
 
 .mathBlock {
     display: flex;
     flex-direction: column;
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-6);
 }
 
-.mathLine {
-    font-family: var(--font-mono);
-    font-size: 1.15rem;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
+.mathBig {
+    font-weight: 600;
+    white-space: nowrap;
 }
 
-.name {
-    font-size: 4rem;
-    letter-spacing: -0.04em;
-    line-height: 1.1;
-    margin-bottom: var(--space-4);
-    background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent-primary));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+.sine {
+    max-width: 460px;
+    margin: var(--space-4) 0;
 }
 
 .tagline {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     color: var(--text-secondary);
     margin-bottom: var(--space-8);
-    font-weight: 400;
+    max-width: 460px;
 }
 
 .actions {
@@ -122,15 +76,16 @@
     align-items: center;
     padding: var(--space-3) var(--space-6);
     background: var(--accent-primary);
-    color: var(--bg-primary);
+    color: #04151c;
     font-weight: 600;
     border-radius: var(--radius-sm);
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .buttonPrimary:hover {
     transform: translateY(-2px);
-    opacity: 0.9;
+    box-shadow: 0 0 20px rgba(88, 196, 221, 0.4);
+    opacity: 1;
 }
 
 .buttonSecondary {
@@ -150,9 +105,74 @@
     border-color: var(--text-secondary);
 }
 
+/* Right panel */
+.imageContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 480px;
+}
+
+.geoRing {
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    max-width: 80vw;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.mathLabel {
+    position: absolute;
+    top: 6%;
+    right: 4%;
+    color: var(--accent-secondary);
+    opacity: 0.9;
+}
+
+.mathLabel2 {
+    position: absolute;
+    bottom: 8%;
+    left: 2%;
+    color: var(--accent-success);
+    opacity: 0.8;
+}
+
+.glassCard {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1rem 1rem;
+    text-align: center;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 30px rgba(88, 196, 221, 0.08);
+}
+
+.glassTitle {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent-primary);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+.glassCaption {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+    margin: 0.75rem 0 0;
+}
+
+.glassCaption em {
+    font-style: normal;
+    color: var(--accent-secondary);
+}
+
 @media (max-width: 960px) {
     .heroContent {
-        flex-direction: column-reverse;
+        flex-direction: column;
         text-align: center;
         gap: var(--space-12);
         padding: var(--space-12) 0;
@@ -163,28 +183,20 @@
         max-width: 100%;
     }
 
-    .imageWrapper {
-        width: 240px;
-        height: 240px;
-    }
-
-    .name {
-        font-size: 3rem;
-    }
-
+    .sine,
     .tagline {
-        font-size: 1.15rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mathLabel {
+        display: none;
     }
 }
 
 @media (max-width: 480px) {
-    .name {
-        font-size: 2.5rem;
-    }
-
-    .imageWrapper {
-        width: 200px;
-        height: 200px;
+    .mathBig {
+        font-size: 1.9em !important;
     }
 
     .actions {

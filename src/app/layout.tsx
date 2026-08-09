@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono, STIX_Two_Text } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-sans",
+// Computer-Modern math font (STIX Two Math) — the visual identity of Manim's
+// MathTex. Loaded as latin + math subsets via the STIX_Two_Text google font.
+const stix = STIX_Two_Text({
+  variable: "--font-math",
   subsets: ["latin"],
   display: "swap",
 });
@@ -29,10 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${jetbrainsMono.variable}`}>
+      <body className={`${stix.variable} ${jetbrainsMono.variable}`}>
         {children}
       </body>
     </html>
   );
 }
-

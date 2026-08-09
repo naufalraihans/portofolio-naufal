@@ -1,31 +1,31 @@
-/* Manim-Style Design System — ported from the mathematical animation library's
-   visual language: pure-black backdrop, warm off-white ink, saturated mobject
-   colors, thin geometric lines, and a subtle dotted-field grid. */
+/* Manim Design System — full port of the Manim visual language.
+   Palette: the exact Manim mobject colors. Typography: Computer-Modern
+   (STIX Two Math) for math + text like Manim's TeX. Background: pure black
+   scene with a navy vignette, NumberPlane grid, thin dashed mobject rings. */
 
 :root {
-  /* Core Colors — Manim palette */
+  /* Core Colors — Manim palette (from manim.utils.color) */
   --bg-primary: #000000;
-  --bg-secondary: #0a0a0a;
-  --bg-tertiary: #16181f;
-  --bg-card: #0d0f14;
+  --bg-secondary: #07070b;
+  --bg-tertiary: #101018;
+  --bg-card: #0b0b12;
 
-  --border-primary: rgba(255, 255, 255, 0.14);
-  --border-secondary: rgba(255, 255, 255, 0.08);
+  --border-primary: rgba(236, 230, 230, 0.16);
+  --border-secondary: rgba(236, 230, 230, 0.09);
 
   --text-primary: #ece6e6;
-  --text-secondary: rgba(236, 230, 230, 0.78);
-  --text-tertiary: rgba(236, 230, 230, 0.5);
-  --text-mono: #ffffff;
+  --text-secondary: rgba(236, 230, 230, 0.72);
+  --text-tertiary: rgba(236, 230, 230, 0.45);
 
   /* Manim mobject colors */
-  --accent-primary: #58c4dd;
-  --accent-secondary: #ffff00;
-  --accent-success: #87c7a1;
-  --accent-error: #fc6255;
-  --accent-purple: #c678dd;
-  --accent-blue: #58c4dd;
-  --accent-green: #87c7a1;
-  --accent-red: #fc6255;
+  --accent-primary: #58c4dd;   /* Manim BLUE */
+  --accent-secondary: #ffff00; /* Manim YELLOW */
+  --accent-success: #87c7a1;   /* Manim GREEN */
+  --accent-error: #fc6255;     /* Manim RED */
+  --accent-purple: #c678dd;    /* Manim PURPLE */
+  --accent-orange: #f5a623;    /* Manim ORANGE */
+  --accent-pink: #ff85a1;      /* Manim PINK */
+  --accent-teal: #66d9ef;      /* Manim TEAL */
 
   /* Spacing System (4px baseline) */
   --space-1: 0.25rem;
@@ -60,51 +60,35 @@ html {
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: var(--font-math), Georgia, 'Times New Roman', serif;
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
 }
 
-/* Dotted math-field backdrop, as in Manim's NumberPlane background */
+/* Navy vignette around the whole scene, like Manim's darkened borders */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: radial-gradient(rgba(236, 230, 230, 0.14) 1px, transparent 1px);
-  background-size: 36px 36px;
-  z-index: -3;
+  background: radial-gradient(ellipse 120% 90% at 50% 40%, transparent 55%, rgba(13, 20, 46, 0.55) 100%);
+  z-index: -1;
   pointer-events: none;
 }
 
 /* Typography Utilities */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   color: var(--text-primary);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   margin-bottom: var(--space-4);
+  font-family: var(--font-math), Georgia, serif;
 }
 
-h1 {
-  font-size: 2.5rem;
-  line-height: 1.2;
-}
-
-h2 {
-  font-size: 2rem;
-  line-height: 1.3;
-}
-
-h3 {
-  font-size: 1.5rem;
-  line-height: 1.4;
-}
+h1 { font-size: 2.5rem; line-height: 1.2; }
+h2 { font-size: 2rem; line-height: 1.3; }
+h3 { font-size: 1.5rem; line-height: 1.4; }
 
 p {
   margin-bottom: var(--space-4);
@@ -116,10 +100,7 @@ a {
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
-
-a:hover {
-  opacity: 0.8;
-}
+a:hover { opacity: 0.8; }
 
 /* Utility Classes */
 .container {
@@ -129,48 +110,21 @@ a:hover {
   width: 100%;
 }
 
-.mono {
-  font-family: var(--font-mono), monospace;
-}
+.mono { font-family: var(--font-mono), monospace; }
 
-.text-accent {
-  color: var(--accent-primary);
-}
-
-.text-secondary {
-  color: var(--text-secondary);
-}
+.text-accent { color: var(--accent-primary); }
+.text-secondary { color: var(--text-secondary); }
 
 /* Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border-primary); border-radius: var(--radius-sm); }
+::-webkit-scrollbar-thumb:hover { background: var(--text-tertiary); }
 
-::-webkit-scrollbar-track {
-  background: var(--bg-primary);
-}
+/* Manim-style SVG stroke helpers */
+.manim-svg { stroke: currentColor; fill: none; }
 
-::-webkit-scrollbar-thumb {
-  background: var(--border-primary);
-  border-radius: var(--radius-sm);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--text-tertiary);
-}
-
-/* Manim-style SVG stroke decorations */
-.manim-svg {
-  stroke: currentColor;
-  fill: none;
-}
-
-@keyframes dashMove {
-  to {
-    stroke-dashoffset: -160;
-  }
-}
-
+@keyframes dashMove { to { stroke-dashoffset: -160; } }
 .manim-dash-anim {
   stroke-dasharray: 8 8;
   animation: dashMove 2.2s linear infinite;

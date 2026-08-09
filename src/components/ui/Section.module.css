@@ -5,27 +5,31 @@
 }
 
 .title {
-    font-family: var(--font-mono);
-    font-size: 1.25rem;
+    font-family: var(--font-math), Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.6rem;
     color: var(--text-primary);
     margin-bottom: var(--space-2);
     display: flex;
-    align-items: center;
-    gap: var(--space-4);
+    align-items: baseline;
+    gap: var(--space-3);
 }
 
 .title::before {
     content: '';
     display: block;
     width: 4px;
-    height: 24px;
+    height: 26px;
     background: var(--accent-success);
-    box-shadow: 0 0 12px var(--accent-success);
+    box-shadow: 0 0 12px rgba(135, 199, 161, 0.5);
 }
 
 .titleNumber {
     color: var(--accent-secondary);
-    margin-right: var(--space-2);
+    margin-right: var(--space-1);
+    font-family: var(--font-mono);
+    font-style: normal;
 }
 
 .divider {

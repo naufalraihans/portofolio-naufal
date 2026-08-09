@@ -1,17 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import styles from './Hero.module.css';
 import { motion } from 'framer-motion';
-
-// Manim-style write-on helper: fade + rise, staggered like Write() mobject
-// creation. mathContent lines mimic MathTex objects appearing in sequence.
-const mathLines = [
-    { text: '\\text{This is } Naufal', color: 'var(--accent-primary)' },
-    { text: '\\text{Electrical Engineer}', color: 'var(--accent-success)' },
-];
+import ManimTex from '@/components/ui/ManimTex';
+import ManimSine from '@/components/ui/ManimSine';
+import BearCanvas from '@/components/ui/BearCanvas';
 
 export default function Hero() {
     return (
@@ -29,35 +24,20 @@ export default function Hero() {
                             &gt; INITIALIZING SYSTEM...
                         </motion.span>
 
+                        {/* MathTex header */}
                         <div className={styles.mathBlock}>
-                            {mathLines.map((line, i) => (
-                                <motion.span
-                                    key={i}
-                                    className={styles.mathLine}
-                                    style={{ color: line.color }}
-                                    initial={{ opacity: 0, x: -16 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.7, delay: 0.3 + i * 0.5 }}
-                                >
-                                    {line.text}
-                                </motion.span>
-                            ))}
+                            <ManimTex tex="\text{This is } Naufal" size="2.6em" className={styles.mathBig} delay={0.3} color={'var(--text-primary)'} />
+                            <ManimTex tex="\text{Electrical Engineer}" size="1.6em" className={styles.mathBig} delay={0.6} color={'var(--accent-primary)'} />
                         </div>
 
-                        <motion.h1
-                            className={styles.name}
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8, delay: 0.8 }}
-                        >
-                            Naufal Raihan S.
-                        </motion.h1>
+                        {/* Manim sine draw, the signature motion */}
+                        <ManimSine className={styles.sine} />
 
                         <motion.p
                             className={styles.tagline}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 1.1 }}
+                            transition={{ duration: 0.8, delay: 0.8 }}
                         >
                             Electrical Engineering Student specializing in AI, IoT, and Embedded Systems.
                             Building scalable hardware-software solutions.
@@ -67,7 +47,7 @@ export default function Hero() {
                             className={styles.actions}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            transition={{ duration: 0.8, delay: 1.4 }}
+                            transition={{ duration: 0.8, delay: 1.1 }}
                         >
                             <Link href="#projects" className={styles.buttonPrimary}>
                                 View Projects <ArrowRight size={18} style={{ marginLeft: '8px' }} />
@@ -78,61 +58,41 @@ export default function Hero() {
                         </motion.div>
                     </div>
 
-                    <div className={styles.imageContainer}>
-                        {/* geometric mobjects drawing in around the portrait */}
-                        <motion.svg
-                            className={styles.geoRing}
-                            viewBox="0 0 200 200"
-                            initial={{ opacity: 0, rotate: -60 }}
-                            animate={{ opacity: 1, rotate: 0 }}
-                            transition={{ duration: 1.2, delay: 0.6, ease: 'easeOut' }}
-                        >
-                            <motion.circle
-                                cx="100" cy="100" r="96"
-                                fill="none" stroke="#ffff00"
-                                strokeWidth="1.5" strokeDasharray="4 6"
-                                initial={{ pathLength: 0 }}
-                                animate={{ pathLength: 1 }}
-                                transition={{ duration: 1.4, delay: 0.6 }}
-                            />
-                            <motion.circle
-                                cx="100" cy="100" r="80"
-                                fill="none" stroke="#58c4dd"
-                                strokeWidth="1.5"
-                                initial={{ pathLength: 0 }}
-                                animate={{ pathLength: 1 }}
-                                transition={{ duration: 1.2, delay: 0.9 }}
-                            />
-                            <motion.path
-                                d="M100 100 L156 44 M100 100 L62 148 M100 100 L44 100"
-                                stroke="#c678dd" strokeWidth="1" strokeDasharray="4 4"
-                                initial={{ pathLength: 0, opacity: 0 }}
-                                animate={{ pathLength: 1, opacity: 1 }}
-                                transition={{ duration: 1.2, delay: 1.1 }}
-                            />
-                            {/* orbiting dot along the outer ring */}
-                            <motion.circle
-                                cx="196" cy="100" r="3" fill="#58c4dd"
-                                animate={{ cx: [196, 100, 4, 100, 196], cy: [100, 4, 100, 196, 100] }}
-                                transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
-                            />
-                        </motion.svg>
-
-                        <motion.div
-                            className={styles.imageWrapper}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.8, delay: 0.9 }}
-                        >
-                            <Image
-                                src="/images/pasFoto.png"
-                                alt="Naufal Raihan S"
-                                fill
-                                style={{ objectFit: 'cover' }}
-                                priority
-                            />
+                    {/* Right panel: math + geometric mobject around BearCanvas */}
+                    <motion.div
+                        className={styles.imageContainer}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 0.9 }}
+                    >
+                        <ManimTex tex="\sin(\omega t)" size="3em" color={'var(--accent-secondary)'} className={styles.mathLabel} />
+                        <ManimTex tex="\int_{0}^{t} f(\tau)\ d\tau" size="2.2em" color={'var(--accent-success)'} className={styles.mathLabel2} />
+                        <motion.div className={styles.geoRing}>
+                            <svg width="100%" height="100%" viewBox="0 0 320 320" fill="none" aria-hidden>
+                                <motion.circle cx="160" cy="160" r="150" stroke="#58c4dd" strokeWidth="1" strokeDasharray="4 8"
+                                    initial={{ pathLength: 0, opacity: 0 }} animate={{ pathLength: 1, opacity: 1 }} transition={{ duration: 1.6, delay: 0.6 }} />
+                                <motion.circle cx="160" cy="160" r="122" stroke="#c678dd" strokeWidth="1" strokeDasharray="4 8"
+                                    initial={{ pathLength: 0, opacity: 0 }} animate={{ pathLength: 1, opacity: 1 }} transition={{ duration: 1.4, delay: 0.9 }} />
+                                <motion.path d="M160 160 L276 44" stroke="#f5a623" strokeWidth="1.5" initial={{ pathLength: 0, opacity: 0 }} animate={{ pathLength: 1, opacity: 1 }} transition={{ duration: 1, delay: 1.1 }} />
+                                <motion.path d="M160 160 L160 44" stroke="#ffff00" strokeWidth="1" initial={{ pathLength: 0, opacity: 0 }} animate={{ pathLength: 1, opacity: 1 }} transition={{ duration: 1, delay: 1.2 }} />
+                                <motion.circle cx="160" cy="40" r="4" fill="#ffff00"
+                                    initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.6 }} />
+                                <motion.circle cx="276" cy="40" r="4" fill="#f5a623"
+                                    initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.6 }} />
+                                <motion.circle
+                                    cx="310" cy="160" r="3" fill="#58c4dd"
+                                    animate={{ cx: [310, 160, 10, 160, 310], cy: [160, 10, 160, 310, 160] }}
+                                    transition={{ duration: 14, repeat: Infinity, ease: 'linear' }}
+                                />
+                            </svg>
                         </motion.div>
-                    </div>
+
+                        <div className={styles.glassCard}>
+                            <h3 className={styles.glassTitle}>Scene: naufal_2025</h3>
+                            <BearCanvas />
+                            <p className={styles.glassCaption}>THEOREM 1.0 — <em>render the engineer</em></p>
+                        </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

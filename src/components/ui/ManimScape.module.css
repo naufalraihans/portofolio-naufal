@@ -4,25 +4,86 @@
     z-index: -2;
     overflow: hidden;
     pointer-events: none;
+    background: linear-gradient(180deg, #050508 0%, #000 100%);
 }
 
-.rotator {
+.plane {
     position: absolute;
-    inset: -40%;
-    /* oversized so rotation never shows edges */
-    animation: slowSpin 240s linear infinite;
+    inset: 0;
+    /* Manim NumberPlane grid via CSS lines */
+    background-image:
+        linear-gradient(rgba(236, 230, 230, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(236, 230, 230, 0.045) 1px, transparent 1px);
+    background-size: 48px 48px;
 }
 
-.field {
-    width: 100%;
-    height: 100%;
-    opacity: 0.5;
+.axes {
+    position: absolute;
+    inset: 0;
 }
 
-@keyframes slowSpin {
-    to {
-        transform: rotate(360deg);
-    }
+.axes::before,
+.axes::after {
+    content: '';
+    position: absolute;
+    z-index: 2;
+}
+
+/* +x axis (horizontal) and +y axis (vertical), brighter like Manim axes */
+.axes::before {
+    left: 0;
+    right: 0;
+    top: calc(50% - 0.75px);
+    height: 1.5px;
+    background: rgba(88, 196, 221, 0.35);
+    box-shadow: 0 0 12px rgba(88, 196, 221, 0.15);
+}
+
+.axes::after {
+    top: 0;
+    bottom: 0;
+    left: calc(50% - 0.75px);
+    width: 1.5px;
+    background: rgba(199, 120, 221, 0.35);
+    box-shadow: 0 0 12px rgba(199, 120, 221, 0.15);
+}
+
+.centerDot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    margin: -3px 0 0 -3px;
+    border-radius: 50%;
+    background: rgba(236, 230, 230, 0.4);
+    z-index: 3;
+}
+
+.axisLabel {
+    position: absolute;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: rgba(236, 230, 230, 0.25);
+    letter-spacing: 1px;
+    z-index: 3;
+}
+
+.corner {
+    position: absolute;
+    bottom: 14px;
+    left: 22px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: rgba(88, 196, 221, 0.28);
+    letter-spacing: 2px;
+    z-index: 3;
+}
+
+.corner i {
+    font-style: italic;
+    font-family: var(--font-math);
+    color: rgba(199, 120, 221, 0.4);
 }
 
 .orbit {
@@ -31,70 +92,64 @@
     left: 50%;
     width: 0;
     height: 0;
-    animation: slowSpin 80s linear infinite reverse;
+    animation: slowSpin 90s linear infinite reverse;
+}
+
+.ring {
+    position: absolute;
+    border: 1px dashed;
+    border-radius: 50%;
+}
+
+.ring1 {
+    width: 560px;
+    height: 560px;
+    margin: -280px 0 0 -280px;
+    border-color: rgba(88, 196, 221, 0.12);
+}
+
+.ring2 {
+    width: 380px;
+    height: 380px;
+    margin: -190px 0 0 -190px;
+    border-color: rgba(236, 230, 230, 0.08);
 }
 
 .mobject {
     position: absolute;
     border: 1.5px solid;
-    opacity: 0.22;
+    opacity: 0.3;
 }
 
-.circle {
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    border-color: #58c4dd;
-    margin-left: -7px;
-    margin-top: -7px;
-}
-
-.square {
+.dot {
     width: 12px;
     height: 12px;
-    border-color: #ffff00;
-    margin-left: -6px;
-    margin-top: -6px;
+    border-radius: 50%;
+    border-color: #58c4dd;
+    margin: -6px 0 0 -6px;
+    transform: rotate(0deg) translateX(280px);
 }
 
-.triangle {
+.sq {
+    width: 10px;
+    height: 10px;
+    border-color: #ffff00;
+    margin: -5px 0 0 -5px;
+    transform: rotate(140deg) translateX(190px);
+}
+
+.tri {
     width: 0;
     height: 0;
-    border: 8px solid transparent;
+    border: 9px solid transparent;
     border-bottom-color: #fc6255;
     background: none;
-    margin-left: -8px;
-    margin-top: -16px;
+    margin: -18px 0 0 -9px;
+    transform: rotate(280deg) translateX(280px);
 }
 
-/* position the mobjects along the orbit ring */
-.orbit .circle {
-    transform: rotate(0deg) translateX(160px);
-}
-
-.orbit .square {
-    transform: rotate(140deg) translateX(160px);
-}
-
-.orbit .triangle {
-    transform: rotate(280deg) translateX(160px);
-}
-
-.axes {
-    position: absolute;
-    bottom: -6px;
-    left: -6px;
-    width: 200px;
-    height: 140px;
-    opacity: 0.5;
-}
-
-.plotPath {
-    animation: dashMove 6s linear infinite;
-}
-
-@keyframes dashMove {
+@keyframes slowSpin {
     to {
-        stroke-dashoffset: -100;
+        transform: rotate(360deg);
     }
 }
