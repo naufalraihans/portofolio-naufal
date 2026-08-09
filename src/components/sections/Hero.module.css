@@ -17,9 +17,16 @@
         linear-gradient(var(--border-secondary) 1px, transparent 1px),
         linear-gradient(90deg, var(--border-secondary) 1px, transparent 1px);
     background-size: 40px 40px;
-    opacity: 0.4;
+    opacity: 0.25;
     z-index: -1;
     mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+    animation: gridDrift 60s linear infinite;
+}
+
+@keyframes gridDrift {
+    to {
+        background-position: 40px 40px;
+    }
 }
 
 .heroContent {
@@ -46,15 +53,24 @@
     position: relative;
 }
 
+.geoRing {
+    position: absolute;
+    width: 460px;
+    height: 460px;
+    max-width: 90vw;
+    overflow: visible;
+    pointer-events: none;
+}
+
 .imageWrapper {
     position: relative;
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     /* Circle */
     overflow: hidden;
-    border: 2px solid var(--border-primary);
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--accent-primary);
+    box-shadow: 0 0 40px -10px rgba(88, 196, 221, 0.4);
     background: var(--bg-card);
 }
 
@@ -63,6 +79,19 @@
     color: var(--accent-primary);
     margin-bottom: var(--space-4);
     font-size: 1rem;
+}
+
+.mathBlock {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--space-2);
+}
+
+.mathLine {
+    font-family: var(--font-mono);
+    font-size: 1.15rem;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
 }
 
 .name {
@@ -77,7 +106,7 @@
 }
 
 .tagline {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: var(--text-secondary);
     margin-bottom: var(--space-8);
     font-weight: 400;
@@ -92,7 +121,7 @@
     display: inline-flex;
     align-items: center;
     padding: var(--space-3) var(--space-6);
-    background: var(--text-primary);
+    background: var(--accent-primary);
     color: var(--bg-primary);
     font-weight: 600;
     border-radius: var(--radius-sm);
@@ -135,8 +164,8 @@
     }
 
     .imageWrapper {
-        width: 280px;
-        height: 280px;
+        width: 240px;
+        height: 240px;
     }
 
     .name {
@@ -144,7 +173,7 @@
     }
 
     .tagline {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
     }
 }
 
@@ -154,8 +183,8 @@
     }
 
     .imageWrapper {
-        width: 240px;
-        height: 240px;
+        width: 200px;
+        height: 200px;
     }
 
     .actions {

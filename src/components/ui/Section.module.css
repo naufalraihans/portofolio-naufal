@@ -1,13 +1,14 @@
 .section {
     padding: var(--space-16) 0;
     border-bottom: 1px solid var(--border-secondary);
+    position: relative;
 }
 
 .title {
     font-family: var(--font-mono);
     font-size: 1.25rem;
     color: var(--text-primary);
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-2);
     display: flex;
     align-items: center;
     gap: var(--space-4);
@@ -18,10 +19,19 @@
     display: block;
     width: 4px;
     height: 24px;
-    background: var(--accent-primary);
+    background: var(--accent-success);
+    box-shadow: 0 0 12px var(--accent-success);
 }
 
 .titleNumber {
-    color: var(--text-tertiary);
+    color: var(--accent-secondary);
     margin-right: var(--space-2);
+}
+
+.divider {
+    width: 240px;
+    height: 40px;
+    margin-bottom: var(--space-8);
+    display: block;
+    overflow: visible;
 }

@@ -1,10 +1,11 @@
 import Section from '../ui/Section';
 import Badge from '../ui/Badge';
-import { Github, ExternalLink, Cpu, Activity, Zap, Globe, BookOpen } from 'lucide-react';
+import { Github, ExternalLink, Globe, BookOpen, Zap } from 'lucide-react';
 import styles from './Projects.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import Reveal from '../ui/Reveal';
+import ThumbFill from '../ui/ThumbFill';
 
 interface Project {
     title: string;
@@ -14,6 +15,8 @@ interface Project {
     icon: React.ReactNode;
     links: { github?: string; demo?: string };
     image?: string;
+    thumb: 'wave' | 'bars' | 'ai';
+    label: string;
 }
 
 const PROJECTS: Project[] = [
@@ -24,7 +27,9 @@ const PROJECTS: Project[] = [
         stack: ['Next.js', 'React', 'SEO Optimization', 'Responsive Design'],
         icon: <Globe size={32} />,
         links: { demo: 'https://yoenrattan.com' },
-        image: '/images/yoenrattan.png'
+        image: '/images/yoenrattan.png',
+        thumb: 'wave',
+        label: 'gallery_plot.png'
     },
     {
         title: 'Laboratorium Algoritma & Pemrograman',
@@ -33,7 +38,9 @@ const PROJECTS: Project[] = [
         stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
         icon: <BookOpen size={32} />,
         links: { demo: 'https://lab-ap.vercel.app/' },
-        image: '/images/lab-ap.png'
+        image: '/images/lab-ap.png',
+        thumb: 'bars',
+        label: 'usage_metrics.png'
     },
     {
         title: 'Model AI for Grading System',
@@ -42,6 +49,8 @@ const PROJECTS: Project[] = [
         stack: ['Python', 'TensorFlow', 'BERT Algorithm'],
         icon: <Zap size={32} />,
         links: { github: '#', demo: '#' },
+        thumb: 'ai',
+        label: 'neural_fit.png'
     }
 ];
 
@@ -55,17 +64,17 @@ export default function Projects() {
                             <div className={styles.projectHeader}>
                                 <div className={styles.visualPlaceholder}>
                                     {project.image ? (
-                                        <Image
-                                            src={project.image}
-                                            alt={project.title}
-                                            fill
-                                            style={{ objectFit: 'cover' }}
-                                        />
-                                    ) : (
                                         <>
-                                            {project.icon}
-                                            <span style={{ marginLeft: '12px' }}>system_diagram.png</span>
+                                            <Image
+                                                src={project.image}
+                                                alt={project.title}
+                                                fill
+                                                style={{ objectFit: 'cover', opacity: 0.4 }}
+                                            />
+                                            <ThumbFill variant={project.thumb} label={project.label} />
                                         </>
+                                    ) : (
+                                        <ThumbFill variant={project.thumb} label={project.label} />
                                     )}
                                 </div>
                             </div>

@@ -1,14 +1,15 @@
 import Section from '../ui/Section';
 import Badge from '../ui/Badge';
 import Reveal from '../ui/Reveal';
-import Tilt3DCard from '../ui/Tilt3DCard'; // New import
+import Tilt3DCard from '../ui/Tilt3DCard';
+import ManimEmblem from '../ui/ManimEmblem';
 import styles from './Skills.module.css';
-import { Zap, Terminal, Cpu, Brain } from 'lucide-react';
 
 const SKILLS = [
     {
         category: "Electrical Engineering",
-        icon: <Zap size={24} />,
+        emblem: "circuit",
+        color: "#ffff00",
         items: [
             "Basic Circuit Analysis",
             "Electronics (Analog & Digital)",
@@ -19,7 +20,8 @@ const SKILLS = [
     },
     {
         category: "Programming & Software",
-        icon: <Terminal size={24} />,
+        emblem: "code",
+        color: "#58c4dd",
         items: [
             "Python",
             "C / C++",
@@ -31,7 +33,8 @@ const SKILLS = [
     },
     {
         category: "Embedded Systems & IoT",
-        icon: <Cpu size={24} />,
+        emblem: "chip",
+        color: "#87c7a1",
         items: [
             "Arduino",
             "ESP32",
@@ -43,7 +46,8 @@ const SKILLS = [
     },
     {
         category: "AI & Data",
-        icon: <Brain size={24} />,
+        emblem: "brain",
+        color: "#fc6255",
         items: [
             "Machine Learning (Random Forest, BERT)",
             "Data Preprocessing",
@@ -62,9 +66,7 @@ export default function Skills() {
                         <Tilt3DCard className={styles.skillCard}>
                             <div className={styles.cardGlow} />
                             <div className={styles.header}>
-                                <div className={styles.iconWrapper}>
-                                    {skillGroup.icon}
-                                </div>
+                                <ManimEmblem variant={skillGroup.emblem as 'circuit' | 'code' | 'chip' | 'brain'} color={skillGroup.color} />
                                 <h3 className={styles.title}>{skillGroup.category}</h3>
                             </div>
                             <div className={styles.badgeContainer}>

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, Terminal } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import styles from './Navbar.module.css';
 
 const NAV_ITEMS = [
@@ -20,7 +20,11 @@ export default function Navbar() {
         <header className={styles.header}>
             <div className={`container ${styles.nav}`}>
                 <Link href="/" className={styles.logo}>
-                    <Terminal size={24} className="text-accent" strokeWidth={2.5} />
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
+                        <circle cx="12" cy="12" r="9" stroke="var(--accent-primary)" strokeWidth="1.5" />
+                        <path d="M4.5 9.5 C8 5 16 5 19.5 9.5 M4.5 14.5 C8 19 16 19 19.5 14.5" stroke="var(--accent-secondary)" strokeWidth="1" strokeDasharray="3 3" />
+                        <circle cx="12" cy="12" r="1.5" fill="var(--accent-secondary)" />
+                    </svg>
                     <div style={{ display: 'flex', alignItems: 'baseline' }}>
                         <span className={styles.logoName}>Naufal Raihan</span>
                         <span className={styles.cursor}>_</span>

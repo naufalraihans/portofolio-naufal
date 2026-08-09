@@ -1,0 +1,100 @@
+.scene {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.rotator {
+    position: absolute;
+    inset: -40%;
+    /* oversized so rotation never shows edges */
+    animation: slowSpin 240s linear infinite;
+}
+
+.field {
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+
+@keyframes slowSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    animation: slowSpin 80s linear infinite reverse;
+}
+
+.mobject {
+    position: absolute;
+    border: 1.5px solid;
+    opacity: 0.22;
+}
+
+.circle {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border-color: #58c4dd;
+    margin-left: -7px;
+    margin-top: -7px;
+}
+
+.square {
+    width: 12px;
+    height: 12px;
+    border-color: #ffff00;
+    margin-left: -6px;
+    margin-top: -6px;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-bottom-color: #fc6255;
+    background: none;
+    margin-left: -8px;
+    margin-top: -16px;
+}
+
+/* position the mobjects along the orbit ring */
+.orbit .circle {
+    transform: rotate(0deg) translateX(160px);
+}
+
+.orbit .square {
+    transform: rotate(140deg) translateX(160px);
+}
+
+.orbit .triangle {
+    transform: rotate(280deg) translateX(160px);
+}
+
+.axes {
+    position: absolute;
+    bottom: -6px;
+    left: -6px;
+    width: 200px;
+    height: 140px;
+    opacity: 0.5;
+}
+
+.plotPath {
+    animation: dashMove 6s linear infinite;
+}
+
+@keyframes dashMove {
+    to {
+        stroke-dashoffset: -100;
+    }
+}

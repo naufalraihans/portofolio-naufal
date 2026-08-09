@@ -1,62 +1,47 @@
-/* Engineering Portfolio Design System */
+/* Manim-Style Design System — ported from the mathematical animation library's
+   visual language: pure-black backdrop, warm off-white ink, saturated mobject
+   colors, thin geometric lines, and a subtle dotted-field grid. */
+
 :root {
-  /* Core Colors - Professional Light (Clean Engineering) */
-  --bg-primary: #f8fafc;
-  /* Slate 50 - Very light almost white */
-  --bg-secondary: #ffffff;
-  /* White for content areas */
-  --bg-tertiary: #f1f5f9;
-  /* Slate 100 for subtle backgrounds */
-  --bg-card: #ffffff;
+  /* Core Colors — Manim palette */
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-tertiary: #16181f;
+  --bg-card: #0d0f14;
 
-  --border-primary: #e2e8f0;
-  /* Slate 200 */
-  --border-secondary: #cbd5e1;
-  /* Slate 300 */
+  --border-primary: rgba(255, 255, 255, 0.14);
+  --border-secondary: rgba(255, 255, 255, 0.08);
 
-  --text-primary: #0f172a;
-  /* Slate 900 - Deep dark blue-black for crisp text */
-  --text-secondary: #475569;
-  /* Slate 600 - Muted text */
-  --text-tertiary: #64748b;
-  /* Slate 500 */
-  --text-mono: #1e293b;
-  /* Slate 800 */
+  --text-primary: #ece6e6;
+  --text-secondary: rgba(236, 230, 230, 0.78);
+  --text-tertiary: rgba(236, 230, 230, 0.5);
+  --text-mono: #ffffff;
 
-  /* Engineering Accents - Adjusted for Light Backgrounds */
-  --accent-primary: #0369a1;
-  /* Sky 700 - Professional Blue */
-  --accent-secondary: #b45309;
-  /* Amber 700 - Engineering Orange */
-  --accent-success: #059669;
-  /* Emerald 600 */
-  --accent-error: #dc2626;
-  /* Red 600 */
+  /* Manim mobject colors */
+  --accent-primary: #58c4dd;
+  --accent-secondary: #ffff00;
+  --accent-success: #87c7a1;
+  --accent-error: #fc6255;
+  --accent-purple: #c678dd;
+  --accent-blue: #58c4dd;
+  --accent-green: #87c7a1;
+  --accent-red: #fc6255;
 
   /* Spacing System (4px baseline) */
   --space-1: 0.25rem;
-  /* 4px */
   --space-2: 0.5rem;
-  /* 8px */
   --space-3: 0.75rem;
-  /* 12px */
   --space-4: 1rem;
-  /* 16px */
   --space-6: 1.5rem;
-  /* 24px */
   --space-8: 2rem;
-  /* 32px */
   --space-12: 3rem;
-  /* 48px */
   --space-16: 4rem;
-  /* 64px */
   --space-24: 6rem;
-  /* 96px */
 
   /* Layout */
   --max-width: 1200px;
   --radius-sm: 2px;
-  --radius-md: 4px;
+  --radius-md: 6px;
   --header-height: 64px;
 }
 
@@ -82,45 +67,15 @@ body {
   position: relative;
 }
 
-/* Living Background Mesh */
-body::before,
-body::after {
+/* Dotted math-field backdrop, as in Manim's NumberPlane background */
+body::before {
   content: '';
   position: fixed;
-  width: 300px;
-  height: 300px;
-  filter: blur(100px);
-  z-index: -2;
-  border-radius: 50%;
-  opacity: 0.6;
-  animation: float 20s infinite ease-in-out;
-}
-
-body::before {
-  background: var(--accent-primary);
-  top: -50px;
-  left: -50px;
-}
-
-body::after {
-  background: var(--accent-secondary);
-  bottom: -50px;
-  right: -50px;
-  animation-delay: -10s;
-}
-
-@keyframes float {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-
-  50% {
-    transform: translate(30px, 50px) scale(1.1);
-  }
-
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
+  inset: 0;
+  background-image: radial-gradient(rgba(236, 230, 230, 0.14) 1px, transparent 1px);
+  background-size: 36px 36px;
+  z-index: -3;
+  pointer-events: none;
 }
 
 /* Typography Utilities */
@@ -202,4 +157,21 @@ a:hover {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-tertiary);
+}
+
+/* Manim-style SVG stroke decorations */
+.manim-svg {
+  stroke: currentColor;
+  fill: none;
+}
+
+@keyframes dashMove {
+  to {
+    stroke-dashoffset: -160;
+  }
+}
+
+.manim-dash-anim {
+  stroke-dasharray: 8 8;
+  animation: dashMove 2.2s linear infinite;
 }

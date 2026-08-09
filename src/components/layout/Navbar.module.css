@@ -4,8 +4,7 @@
     left: 0;
     width: 100%;
     height: var(--header-height);
-    background: rgba(255, 255, 255, 0.9);
-    /* Light mode glass */
+    background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-primary);
     z-index: 1000;

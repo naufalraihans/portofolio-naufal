@@ -41,7 +41,7 @@ export default function Publications() {
                     <Reveal key={index} width="100%">
                         <article style={{
                             padding: '1.5rem',
-                            background: 'var(--bg-card)',
+                            background: 'linear-gradient(160deg, rgba(255,255,255,0.04), rgba(0,0,0,0.3))',
                             border: '1px solid var(--border-primary)',
                             borderRadius: 'var(--radius-md)',
                             display: 'flex',
