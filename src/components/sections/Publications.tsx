@@ -1,5 +1,5 @@
 import Section from '../ui/Section';
-import { Book, FileText, ExternalLink } from 'lucide-react';
+import { Book, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import Reveal from '../ui/Reveal';
 import Badge from '../ui/Badge';

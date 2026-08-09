@@ -15,7 +15,7 @@ export default function About() {
                         I believe that the future of efficiency lies in intelligent distributed systems that can operate autonomously in real-time.
                     </p>
                     <p style={{ color: 'var(--text-secondary)' }}>
-                        When I'm not prototyping circuits or writing firmware, I am analyzing data to validate models or contributing to open-source engineering tools.
+                        When I&apos;m not prototyping circuits or writing firmware, I am analyzing data to validate models or contributing to open-source engineering tools.
                     </p>
                 </div>
             </Reveal>
