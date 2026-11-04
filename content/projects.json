@@ -1,0 +1,31 @@
+{
+	"caption": "Selected work\n2024 — 2026",
+	"statement": "Four builds from the same lab: grade faster, teach better, ship a real client's site, and keep the API honest.",
+	"word": "Build",
+	"items": [
+		{
+			"title": "Automatic Grading System",
+			"meta": "RAG · BERT · NLP",
+			"image": "",
+			"link": ""
+		},
+		{
+			"title": "CPNS Tryout Engine",
+			"meta": "Go · Gin · PostgreSQL",
+			"image": "",
+			"link": ""
+		},
+		{
+			"title": "SESL Practicum Platform",
+			"meta": "SvelteKit · Go · JWT",
+			"image": "",
+			"link": ""
+		},
+		{
+			"title": "Yoenrattan.com",
+			"meta": "Client website",
+			"image": "/images/yoenrattan.png",
+			"link": "https://yoenrattan.com"
+		}
+	]
+}

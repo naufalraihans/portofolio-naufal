@@ -1,0 +1,35 @@
+{
+	"heading": "Research & skills",
+	"items": [
+		{
+			"year": "2025",
+			"title": "Machine Learning — LLM, RAG, NLP",
+			"venue": "Applied AI in education and engineering systems; intelligent web systems.",
+			"link": ""
+		},
+		{
+			"year": "2024",
+			"title": "Full-stack web development",
+			"venue": "Go, TypeScript, Svelte, PostgreSQL.",
+			"link": ""
+		},
+		{
+			"year": "2024",
+			"title": "Programming & data",
+			"venue": "Python, C/C++, data analysis and data science, machine learning fundamentals.",
+			"link": ""
+		},
+		{
+			"year": "2025",
+			"title": "Electrical & engineering",
+			"venue": "Electronic fundamentals, circuit analysis, Multisim NI, Proteus.",
+			"link": ""
+		},
+		{
+			"year": "2024",
+			"title": "Modules taken",
+			"venue": "TOEFL iBT preparation.",
+			"link": ""
+		}
+	]
+}

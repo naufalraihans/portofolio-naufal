@@ -1,0 +1,24 @@
+{
+	"title": "Say hello, or find me where the work happens",
+	"places": [
+		{
+			"city": "West Jakarta",
+			"addr": "DKI Jakarta, Indonesia\nGMT+7, flexible overlap",
+			"link": "mailto:naufalraihansaputra@gmail.com",
+			"linkLabel": "naufalraihansaputra@gmail.com"
+		},
+		{
+			"city": "LinkedIn",
+			"addr": "Experience,\nrecommendations",
+			"link": "https://www.linkedin.com/in/naufal-raihansaputra-2b2a2127b",
+			"linkLabel": "in/naufal-raihansaputra"
+		},
+		{
+			"city": "Phone",
+			"addr": "Calls and\nWhatsApp",
+			"link": "https://wa.me/6281282030818",
+			"linkLabel": "+62 812 8203 0818"
+		}
+	],
+	"formSent": "Thank you. I reply within two working days."
+}

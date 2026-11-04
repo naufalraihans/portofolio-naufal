@@ -1,0 +1,10 @@
+{
+	"statement": "One lab in West Jakarta, where circuits get measured, practicums get built, and grading gets automated down from hours to minutes.",
+	"body": "Electrical engineering student at ITPLN (3.86/4.00), laboratory assistant and full-stack developer at the Smart Electronic Systems Laboratory. I build the practicum platforms students use every cycle, and the RAG/BERT grading system that reads over a hundred answers per session.",
+	"facts": [
+		{ "title": "Measure first", "text": "Circuit analysis and simulation in Multisim NI and Proteus before anything is built or claimed." },
+		{ "title": "Automate the boring", "text": "Manual grading cut by 60–70%, turnaround from hours to under 10 minutes per session." },
+		{ "title": "Ship to a client", "text": "Production websites with real deployment, real payment integration and real users." }
+	],
+	"image": ""
+}
