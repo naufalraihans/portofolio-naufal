@@ -1,35 +1,35 @@
 {
-	"heading": "Research & skills",
+	"heading": "Publications",
 	"items": [
 		{
-			"year": "2025",
-			"title": "Machine Learning — LLM, RAG, NLP",
-			"venue": "Applied AI in education and engineering systems; intelligent web systems.",
-			"link": ""
-		},
-		{
-			"year": "2024",
-			"title": "Full-stack web development",
-			"venue": "Go, TypeScript, Svelte, PostgreSQL.",
-			"link": ""
-		},
-		{
-			"year": "2024",
-			"title": "Programming & data",
-			"venue": "Python, C/C++, data analysis and data science, machine learning fundamentals.",
-			"link": ""
+			"year": "2026",
+			"title": "Evaluasi Kualitas, Akurasi, dan Stabilitas Penilaian Pemrograman Berbantuan Model Bahasa Besar",
+			"venue": "SOSTECH: Jurnal Sosial dan Teknologi · Oct 2026",
+			"link": "https://doi.org/10.59188/jurnalsostech.v6i10.33003"
 		},
 		{
 			"year": "2025",
-			"title": "Electrical & engineering",
-			"venue": "Electronic fundamentals, circuit analysis, Multisim NI, Proteus.",
-			"link": ""
+			"title": "TEKNOLOJIA-AGRI: Pemanfaatan EBT pada Pertanian dengan Sistem Smartfarming Berbasis IoT untuk Lingkungan Hijau",
+			"venue": "ResearchGate · Jun 2025",
+			"link": "https://www.researchgate.net/publication/393334995"
+		},
+		{
+			"year": "2025",
+			"title": "TEKNOLOJIA AIR: Pemanfaatan Natrium Hidroksida sebagai Carbon Capture dengan Integrasi Sistem IoT",
+			"venue": "ResearchGate · Jun 2025",
+			"link": "https://www.researchgate.net/publication/393253920"
+		},
+		{
+			"year": "2025",
+			"title": "Penerapan Smart Grid dan Keberlanjutan untuk Efisiensi Energi Industri Otomotif di Patimban Berstandar GBC Indonesia",
+			"venue": "ResearchGate · Mar 2025",
+			"link": "https://www.researchgate.net/publication/393252047"
 		},
 		{
 			"year": "2024",
-			"title": "Modules taken",
-			"venue": "TOEFL iBT preparation.",
-			"link": ""
+			"title": "Special Relativity Pt.1",
+			"venue": "ResearchGate · Jan 2024",
+			"link": "https://www.researchgate.net/publication/393254904"
 		}
 	]
 }
