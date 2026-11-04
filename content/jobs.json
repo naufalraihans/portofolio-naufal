@@ -2,31 +2,31 @@
 	"heading": "Experience",
 	"items": [
 		{
-			"period": "Jan 2026 — now",
+			"period": "Jan 2026 - now",
 			"role": "Backend Web Developer",
 			"company": "PT. METADIGITAL CORELAB · West Jakarta",
 			"summary": "RESTful APIs in Go (Gin, GORM, PostgreSQL) for a CPNS tryout engine: attempt start, auto-saved answers, scoring and result endpoints. Server-authoritative exam timing with reliable auto-submit on timeout; Midtrans payment and Google OAuth2 with JWT-based access control."
 		},
 		{
-			"period": "Feb 2026 — now",
+			"period": "Feb 2026 - now",
 			"role": "Python Mentor and Developer",
 			"company": "Pintarkan ID · DKI Jakarta",
 			"summary": "Building the Python curriculum for the mentoring programme."
 		},
 		{
-			"period": "Nov 2025 — now",
+			"period": "Nov 2025 - now",
 			"role": "Web Developer and Data Entry Clerk",
 			"company": "Yoenrattan · Bekasi, West Java",
 			"summary": "Developed and maintained the official Yoenrattan.com site with a focus on performance, responsiveness and usability. Collaborated on structure, content integration and features; delivered a production-ready site with end-to-end deployment."
 		},
 		{
-			"period": "May 2025 — now",
+			"period": "May 2025 - now",
 			"role": "Full-Stack Developer",
 			"company": "Smart Electronic Systems Laboratory (SESL) · West Jakarta",
 			"summary": "Full-stack platforms (Go/Gin + GORM/PostgreSQL, SvelteKit/TypeScript) for Applied AI, Microcontroller and Algorithm & Programming practicum labs, serving 20–40 active students per cycle. Automated grading with RAG and BERT-based NLP over 100+ answers per session, cutting manual workload 60–70%. Secure exam environments with JWT auth and live coding, on Clean Architecture with Swagger-documented APIs and unit tests."
 		},
 		{
-			"period": "May 2025 — now",
+			"period": "May 2025 - now",
 			"role": "Laboratory Assistant",
 			"company": "Institut Teknologi PLN · West Jakarta",
 			"summary": "Developed an automatic grading system using RAG and BERT-based models, evaluating over 100 student answers per session. Built a web-based learning platform supporting 20–40 active students per laboratory cycle, with NLP evaluation that cut manual grading 60–70% and improved assessment consistency."
@@ -38,7 +38,7 @@
 			"summary": "Managed the event rundown and served as timekeeper. Coordinated on-site flow across divisions, kept transitions between sessions smooth, and handled real-time scheduling adjustments."
 		},
 		{
-			"period": "Nov 2024 — Jan 2025",
+			"period": "Nov 2024 - Jan 2025",
 			"role": "Machine Learning Member",
 			"company": "Google Developer Groups on Campus (GDGoC) UIN · UIN Jakarta",
 			"summary": "Machine learning study groups covering supervised and unsupervised learning, data preprocessing, model training and evaluation."

@@ -28,7 +28,7 @@
 			{#each projects.items as item, i}
 			<li class="col__look" style="--collections-li-col-look-rotate-4-from: {rotations[i % rotations.length]}deg">
 				<figure class="col__photo m-photo">
-					{#if item.image}<img src={item.image} alt="{item.title} — {item.meta}" width="350" height="437" loading="lazy" />{/if}
+					{#if item.image}<img src={item.image} alt="{item.title}, {item.meta}" width="350" height="437" loading="lazy" />{/if}
 				</figure>
 				<div class="col__meta"><h3 class="m-text-4">{item.title}</h3><p class="m-text-8">{item.meta}</p></div>
 				{#if item.link}<a class="col__add m-btn-2" href={item.link} target="_blank" rel="noreferrer"><span class="m-btn-2__label">View project</span></a>{/if}

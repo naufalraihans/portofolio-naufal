@@ -3,7 +3,7 @@
 	"shortName": "portofolio",
 	"domain": "naufalrs.cv",
 	"tagline": "Electrical engineering, applied to systems",
-	"role": "Electrical Engineer",
+	"role": "Embedded · Backend · Electrical Engineer",
 	"location": "West Jakarta, Indonesia",
 	"email": "naufalraihansaputra@gmail.com",
 	"social": [
@@ -12,7 +12,7 @@
 		{ "label": "WhatsApp", "href": "https://wa.me/6281282030818" }
 	],
 	"seo": {
-		"title": "Naufal Raihan Saputra — Electrical Engineer",
-		"description": "Electrical engineering student building AI-graded lab platforms, production web systems, and the software that measures both."
+		"title": "Naufal Raihan Saputra · Embedded, Backend and Electrical Engineer",
+		"description": "Embedded, backend and electrical engineer: control systems, Go APIs, and the AI-graded lab platforms that measure both."
 	}
 }

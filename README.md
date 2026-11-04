@@ -1,6 +1,6 @@
 # naufalrs.cv
 
-Portfolio site — SvelteKit + adapter-static, built from the 8B fashion-brand template (see `plan/`).
+Portfolio site, SvelteKit + adapter-static, built from the 8B fashion-brand template (see `plan/`).
 
 ## Run
 
@@ -29,7 +29,7 @@ DNS di registrar: `A` record ke IP host (atau `CNAME` ke host kalau pakai subdom
 ## Struktur
 
 ```
-content/           data lo (JSON) — edit di sini
+content/           data lo (JSON), edit di sini
 static/images/     foto lo
 src/app.css        design system template (1:1 dari index.html)
 src/lib/motion.js  motion kit template

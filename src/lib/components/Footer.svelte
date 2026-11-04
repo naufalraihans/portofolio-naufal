@@ -8,7 +8,7 @@
 		event.preventDefault();
 		const form = event.currentTarget;
 		if (!form.reportValidity()) return;
-		// ponytail: no backend — hook a mailing-list provider here when you want real signups
+		// ponytail: no backend, hook a mailing-list provider here when you want real signups
 		status = 'You are on the list. New work lands in your inbox first.';
 		form.reset();
 	}

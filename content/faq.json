@@ -1,6 +1,6 @@
 {
 	"heading": "Before you ask",
-	"intro": "What I build, what I study, and how to reach me — in short. Anything else, I reply within two working days.",
+	"intro": "What I build, what I study, and how to reach me, in short. Anything else, I reply within two working days.",
 	"contactLink": "Ask me directly",
 	"items": [
 		{
@@ -8,7 +8,7 @@
 			"a": "Electrical Engineering at Institut Teknologi PLN, third-year, 3.86/4.00. Circuits, electronics and simulation on one side; applied AI and software systems on the other."
 		},
 		{
-			"q": "Electrical or software — which one are you?",
+			"q": "Electrical or software: which one are you?",
 			"a": "Both, deliberately. The electrical side is the training; the software side is how I make lab work scale. Most of my projects sit exactly where the two meet."
 		},
 		{
@@ -21,7 +21,7 @@
 		},
 		{
 			"q": "Can I see the code?",
-			"a": "Client and lab work stays private, but I can walk through the architecture — Go services, SvelteKit front ends, JWT auth, Postgres schemas — on a call."
+			"a": "Client and lab work stays private, but I can walk through the architecture on a call: Go services, SvelteKit front ends, JWT auth, Postgres schemas."
 		}
 	]
 }

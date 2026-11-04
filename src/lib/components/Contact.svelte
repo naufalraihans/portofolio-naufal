@@ -10,7 +10,7 @@
 		event.preventDefault();
 		const form = event.currentTarget;
 		if (!form.reportValidity()) return;
-		// ponytail: no backend — hook Formspree/Netlify Forms here when you want real sends
+		// ponytail: no backend, hook Formspree/Netlify Forms here when you want real sends
 		status = contact.formSent;
 		form.reset();
 	}

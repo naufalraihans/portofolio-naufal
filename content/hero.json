@@ -1,12 +1,12 @@
 {
-	"titleLine1": "Signal",
+	"titleLine1": "Embedded",
 	"titleLine2": "Systems",
-	"kicker": "Portfolio — 2026",
-	"cornerLeft": "Electrical engineering.\nApplied AI.",
+	"kicker": "Portfolio · 2026",
+	"cornerLeft": "Embedded control.\nBackend systems.",
 	"cornerRight": "# Electrical\n(2026)",
 	"introCaption": "Measure twice,\nship once",
-	"asideText": "Electrical engineering student building AI-driven grading systems and production web platforms — from the lab bench to the live deploy.",
+	"asideText": "Electrical engineering student building embedded, backend and control systems, from the lab bench to the live deploy.",
 	"asideButton": "See the work",
 	"thumbImage": "",
-	"portraitImage": "/images/pasfoto.png"
+	"portraitImage": "/images/pasfoto.jpg"
 }
