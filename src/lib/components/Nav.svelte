@@ -30,6 +30,7 @@
 			<ul class="nav__links" data-8b-items=":scope > li">
 				<li><a class="m-link" href="#work">Work</a></li>
 				<li><a class="m-link" href="#about">About</a></li>
+				<li><a class="m-link" href="#credentials">Record</a></li>
 				<li><a class="m-link" href="#contact">Contact</a></li>
 			</ul>
 		</nav>
@@ -46,6 +47,7 @@
 			<li><a class="m-link-2" href="#work" onclick={() => setOpen(false)}>Work</a></li>
 			<li><a class="m-link-2" href="#index" onclick={() => setOpen(false)}>Index</a></li>
 			<li><a class="m-link-2" href="#about" onclick={() => setOpen(false)}>About</a></li>
+			<li><a class="m-link-2" href="#credentials" onclick={() => setOpen(false)}>Record</a></li>
 			<li><a class="m-link-2" href="#contact" onclick={() => setOpen(false)}>Contact</a></li>
 		</ul>
 		<p class="m-text-4">{site.tagline}</p>

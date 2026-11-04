@@ -7,6 +7,7 @@
 	import Arrivals from '$lib/components/Arrivals.svelte';
 	import Palette from '$lib/components/Palette.svelte';
 	import Experience from '$lib/components/Experience.svelte';
+	import Credentials from '$lib/components/Credentials.svelte';
 	import Notebook from '$lib/components/Notebook.svelte';
 	import Faq from '$lib/components/Faq.svelte';
 	import Contact from '$lib/components/Contact.svelte';
@@ -37,6 +38,7 @@
 	<Arrivals />
 	<Palette />
 	<Experience />
+	<Credentials />
 	<Notebook />
 	<Faq />
 	<Contact />

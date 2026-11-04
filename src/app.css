@@ -567,22 +567,130 @@ textarea.m-field__input { resize: vertical; min-height: 92px; }
 [data-8b-live] #contact .ct__bar { transform-origin: 50% 0%; }
 }
 
-/* ---- portfolio additions (not in template) ---- */
+/* ---- 3D record cards (plan/bahan/card) ---- */
+@layer sections {
+#about .cv__card, #credentials .cr__card {
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  --tilt-glow: 50% 50%;
+  --card-bg: var(--color-2);
+  --card-fg: var(--color-1);
+  --card-muted: var(--color-7);
+  --card-line: color-mix(in srgb, var(--color-1) 14%, transparent);
+  --card-glare: color-mix(in srgb, var(--color-1) 16%, transparent);
+  position: relative;
+  display: grid;
+  align-content: start;
+  padding: 26px 24px 28px;
+  border-radius: 18px;
+  background: var(--card-bg);
+  color: var(--card-fg);
+  border: 1px solid var(--card-line);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--color-1) 13%, transparent),
+    0 2px 3px rgb(0 0 0 / .2),
+    0 24px 38px -28px rgb(0 0 0 / .75);
+  transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transform-style: preserve-3d;
+  transition: transform .5s cubic-bezier(.22, .68, .35, 1), box-shadow .5s ease, border-color .5s ease;
+}
+#about .cv__card:hover, #credentials .cr__card:hover {
+  border-color: color-mix(in srgb, var(--card-fg) 34%, transparent);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--color-1) 20%, transparent),
+    0 4px 6px rgb(0 0 0 / .22),
+    0 42px 60px -30px rgb(0 0 0 / .8);
+}
+#about .cv__body, #credentials .cr__body { display: grid; align-content: start; gap: 8px; transform: translateZ(26px); transition: transform .5s cubic-bezier(.22, .68, .35, 1); }
+#about .cv__card:hover .cv__body, #credentials .cr__card:hover .cr__body { transform: translateZ(44px); }
+.cv__glare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(58% 58% at var(--tilt-glow), var(--card-glare), transparent 72%);
+  opacity: 0;
+  transition: opacity .45s ease;
+  transform: translateZ(1px);
+}
+#about .cv__card:hover .cv__glare, #credentials .cr__card:hover .cv__glare { opacity: 1; }
+#about .cv__card:focus-within .cv__body { transform: translateZ(44px); }
+#about .cv__link:focus-visible { outline-color: var(--color-1); outline-offset: 4px; }
+#about .cv__period, #credentials .cr__date { font-family: var(--font-1); font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--card-muted); }
+#about .cv__title, #credentials .cr__name { font-family: var(--font-1); font-size: 17px; font-weight: 700; line-height: 1.25; letter-spacing: -.01em; }
+#about .cv__org, #credentials .cr__issuer { font-size: 13px; line-height: 1.5; color: var(--card-muted); }
+#about .cv__text { font-size: 13px; line-height: 1.6; color: var(--card-muted); }
+#about .cv__link { justify-self: start; margin-top: 4px; display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-1); font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; border-bottom: 1.5px solid currentColor; padding-bottom: 2px; transition: gap .3s ease; }
+#about .cv__link:hover { gap: 12px; }
+@media (max-width: 760px) {
+  #about .cv__card, #credentials .cr__card { padding: 20px 18px 22px; }
+  #about .cv__title, #credentials .cr__name { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #about .cv__card, #credentials .cr__card, #about .cv__body, #credentials .cr__body { transition: none; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  [data-8b-live] #about .cv__card, [data-8b-live] #credentials .cr__card { animation: card-rise linear both; animation-timeline: view(); animation-range: entry calc(var(--i, 0) * 4%) entry calc(44% + var(--i, 0) * 4%); }
+}
+@keyframes card-rise { from { translate: 0 calc(26px + var(--i, 0) * 3px); } }
+}
+
+@layer sections {
+#credentials { position: relative; padding: 130px var(--space-1) 140px; background: var(--color-2); color: var(--color-1); display: grid; gap: 26px; overflow-x: clip; }
+#credentials .cr__head { display: grid; gap: 18px; justify-items: start; max-width: 880px; margin-bottom: 28px; }
+#credentials .cr__cap { color: var(--color-7); }
+#credentials .cr__title { font-size: clamp(24px, 2.9vw, 42px); --fill-from: var(--color-3); }
+#credentials .m-badge { background: var(--color-1); color: var(--color-2); }
+#credentials .cr__heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-bottom: 12px; border-bottom: 1.5px solid color-mix(in srgb, var(--color-1) 32%, transparent); margin-top: 26px; }
+#credentials .cr__awards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+#credentials .cr__certs { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+#credentials .cr__card {
+  --card-bg: var(--color-1);
+  --card-fg: var(--color-2);
+  --card-muted: var(--color-4);
+  --card-line: color-mix(in srgb, var(--color-2) 10%, transparent);
+  --card-glare: color-mix(in srgb, var(--color-9) 26%, transparent);
+  color: var(--card-fg);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / .9),
+    0 2px 3px rgb(0 0 0 / .07),
+    0 24px 38px -28px rgb(0 0 0 / .35);
+}
+#credentials .cr__card:hover { box-shadow: inset 0 1px 0 #fff, 0 4px 6px rgb(0 0 0 / .08), 0 42px 60px -30px rgb(0 0 0 / .4); }
+#credentials .cr__card--award {
+  --card-bg: var(--color-9);
+  --card-muted: color-mix(in srgb, var(--color-2) 62%, transparent);
+  --card-line: color-mix(in srgb, var(--color-2) 18%, transparent);
+  --card-glare: color-mix(in srgb, var(--color-1) 42%, transparent);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--color-1) 60%, transparent),
+    0 2px 3px rgb(0 0 0 / .08),
+    0 24px 38px -28px color-mix(in srgb, var(--color-9) 90%, transparent);
+}
+#credentials .cr__place { font-family: var(--font-1); font-size: clamp(30px, 3.4vw, 46px); font-weight: 800; line-height: .9; letter-spacing: -.03em; }
+#credentials .cr__id { font-family: var(--font-2); font-size: 11px; letter-spacing: .04em; color: var(--color-7); word-break: break-all; }
+#credentials .cr__foot { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; margin-top: 34px; }
+#credentials .cr__org { display: grid; gap: 2px; padding: 14px 0; border-top: 1px solid color-mix(in srgb, var(--color-1) 16%, transparent); }
+#credentials .cr__orgs .cr__name, #credentials .cr__langs .cr__name { font-family: var(--font-1); font-size: 16px; font-weight: 700; }
+#credentials .cr__orgs .cr__issuer, #credentials .cr__langs .cr__issuer { color: var(--color-7); }
+@media (max-width: 760px) {
+  #credentials { padding-block: 86px 92px; }
+  #credentials .cr__awards, #credentials .cr__certs { grid-template-columns: 1fr; }
+  #credentials .cr__foot { gap: 26px; }
+}
+}
+
 @layer sections {
 #palette .pal__name { font-family: var(--font-1); letter-spacing: -.035em; text-transform: uppercase; }
-#about .cv { grid-column: 1 / -1; display: grid; gap: 56px; margin-top: 40px; }
-#about .cv__block { display: grid; gap: 20px; }
-#about .cv__heading { padding-bottom: 12px; border-bottom: 1.5px solid var(--color-2); }
-#about .cv__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; align-items: stretch; }
-#about .cv__card { display: grid; align-content: start; gap: 8px; padding: 22px 22px 24px; border: 1.5px solid var(--color-5); border-radius: var(--radius-1); background: var(--color-6); transition: border-color .35s ease, background .35s ease; }
-#about .cv__card:hover { border-color: var(--color-2); background: var(--color-1); }
-#about .cv__period { letter-spacing: .02em; }
-#about .cv__title { font-size: 13px; }
-#about .cv__org { color: var(--color-4); }
+#about .cv { grid-column: 1 / -1; display: grid; gap: 64px; margin-top: 56px; }
+#about .cv__block { display: grid; gap: 22px; }
+#about .cv__heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-bottom: 12px; border-bottom: 1.5px solid var(--color-2); }
+#about .cv__count { font-family: var(--font-1); font-size: 13px; font-weight: 500; letter-spacing: .04em; color: var(--color-4); }
+#credentials .cr__count { font-family: var(--font-1); font-size: 13px; font-weight: 500; letter-spacing: .04em; color: var(--color-7); }
+#about .cv__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; align-items: stretch; }
 @media (max-width: 760px) {
-  #about .cv { gap: 40px; margin-top: 8px; }
+  #about .cv { gap: 44px; margin-top: 28px; }
   #about .cv__grid { grid-template-columns: 1fr; }
-  #about .cv__card { padding: 18px; }
 }
 }
 
