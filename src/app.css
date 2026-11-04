@@ -570,12 +570,19 @@ textarea.m-field__input { resize: vertical; min-height: 92px; }
 /* ---- portfolio additions (not in template) ---- */
 @layer sections {
 #palette .pal__name { font-family: var(--font-1); letter-spacing: -.035em; text-transform: uppercase; }
-#about .cv__block { display: grid; gap: 4px; margin-top: 8px; }
-#about .cv__list { display: grid; }
-#about .cv__item { position: relative; display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 18px 0; }
-#about .cv__period { padding-top: 2px; }
+#about .cv { grid-column: 1 / -1; display: grid; gap: 56px; margin-top: 40px; }
+#about .cv__block { display: grid; gap: 20px; }
+#about .cv__heading { padding-bottom: 12px; border-bottom: 1.5px solid var(--color-2); }
+#about .cv__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; align-items: stretch; }
+#about .cv__card { display: grid; align-content: start; gap: 8px; padding: 22px 22px 24px; border: 1.5px solid var(--color-5); border-radius: var(--radius-1); background: var(--color-6); transition: border-color .35s ease, background .35s ease; }
+#about .cv__card:hover { border-color: var(--color-2); background: var(--color-1); }
+#about .cv__period { letter-spacing: .02em; }
+#about .cv__title { font-size: 13px; }
+#about .cv__org { color: var(--color-4); }
 @media (max-width: 760px) {
-  #about .cv__item { grid-template-columns: 1fr; gap: 6px; }
+  #about .cv { gap: 40px; margin-top: 8px; }
+  #about .cv__grid { grid-template-columns: 1fr; }
+  #about .cv__card { padding: 18px; }
 }
 }
 

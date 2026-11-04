@@ -19,14 +19,19 @@
 			{/each}
 		</ul>
 
+	</div>
+
+	<div class="cv">
 		{#if jobs.items?.length}
 		<div class="cv__block">
-			<h3 class="m-text-4">{jobs.heading}</h3>
-			<ul class="cv__list" data-8b-items=":scope > li">
+			<h3 class="cv__heading m-text-4">{jobs.heading}</h3>
+			<ul class="cv__grid">
 				{#each jobs.items as job}
-				<li class="cv__item"><span class="studio__rule" data-8b-motion="rule" data-8b-enter="94%"></span>
+				<li class="cv__card">
 					<p class="cv__period m-text-8">{job.period}</p>
-					<div><h4 class="cv__role m-text-4">{job.role} · {job.company}</h4><p class="m-text-5">{job.summary}</p></div>
+					<h4 class="cv__title m-text-4">{job.role}</h4>
+					<p class="cv__org m-text-8">{job.company}</p>
+					<p class="m-text-5">{job.summary}</p>
 				</li>
 				{/each}
 			</ul>
@@ -35,12 +40,13 @@
 
 		{#if education.items?.length}
 		<div class="cv__block">
-			<h3 class="m-text-4">{education.heading}</h3>
-			<ul class="cv__list" data-8b-items=":scope > li">
+			<h3 class="cv__heading m-text-4">{education.heading}</h3>
+			<ul class="cv__grid">
 				{#each education.items as edu}
-				<li class="cv__item"><span class="studio__rule" data-8b-motion="rule" data-8b-enter="94%"></span>
+				<li class="cv__card">
 					<p class="cv__period m-text-8">{edu.period}</p>
-					<div><h4 class="cv__role m-text-4">{edu.school}</h4><p class="m-text-5">{edu.detail}</p></div>
+					<h4 class="cv__title m-text-4">{edu.school}</h4>
+					<p class="m-text-5">{edu.detail}</p>
 				</li>
 				{/each}
 			</ul>
@@ -49,12 +55,13 @@
 
 		{#if research.items?.length}
 		<div class="cv__block">
-			<h3 class="m-text-4">{research.heading}</h3>
-			<ul class="cv__list" data-8b-items=":scope > li">
+			<h3 class="cv__heading m-text-4">{research.heading}</h3>
+			<ul class="cv__grid">
 				{#each research.items as paper}
-				<li class="cv__item"><span class="studio__rule" data-8b-motion="rule" data-8b-enter="94%"></span>
+				<li class="cv__card">
 					<p class="cv__period m-text-8">{paper.year}</p>
-					<div><h4 class="cv__role m-text-4">{paper.title}</h4><p class="m-text-5">{paper.venue}{#if paper.link} · <a class="m-link" href={paper.link} target="_blank" rel="noreferrer">Read</a>{/if}</p></div>
+					<h4 class="cv__title m-text-4">{paper.title}</h4>
+					<p class="m-text-5">{paper.venue}{#if paper.link} · <a class="m-link" href={paper.link} target="_blank" rel="noreferrer">Read</a>{/if}</p>
 				</li>
 				{/each}
 			</ul>
