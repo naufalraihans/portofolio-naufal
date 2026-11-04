@@ -1,6 +1,6 @@
 {
 	"caption": "Selected work\n2024 - 2026",
-	"statement": "Four builds from the same lab: grade faster, teach better, ship a real client's site, and keep the API honest.",
+	"statement": "Five builds from the same lab: grade faster, teach better, run the printer, ship a real client's site, and keep the API honest.",
 	"word": "Build",
 	"items": [
 		{
@@ -12,7 +12,7 @@
 		{
 			"title": "CPNS Tryout Engine",
 			"meta": "Go · Gin · PostgreSQL",
-			"image": "",
+			"image": "/images/cpns.png",
 			"link": ""
 		},
 		{
@@ -26,6 +26,12 @@
 			"meta": "Client website",
 			"image": "/images/yoenrattan.png",
 			"link": "https://yoenrattan.com"
+		},
+		{
+			"title": "Filamaker",
+			"meta": "3D printing",
+			"image": "/images/filamaker.jpg",
+			"link": ""
 		}
 	]
 }
