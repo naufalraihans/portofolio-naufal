@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "https://free-lychee-920866.framer.app/$1"
+    }
+  ]
+}

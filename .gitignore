@@ -2,3 +2,5 @@ node_modules
 /build
 /.svelte-kit
 vite.config.js.timestamp-*
+
+plan/
