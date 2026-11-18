@@ -4,10 +4,10 @@
   "buildCommand": "echo skip-build",
   "outputDirectory": "public",
   "cleanUrls": true,
-  "rewrites": [
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "https://free-lychee-920866.framer.app/$1"
+      "src": "/(.*)",
+      "dest": "https://free-lychee-920866.framer.app/$1"
     }
   ]
 }
